@@ -66,6 +66,7 @@
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCancel.Location = new System.Drawing.Point(409, 134);
             this.buttonCancel.Name = "buttonCancel";
@@ -141,6 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(522, 179);
             this.Controls.Add(this.textBoxDecrioption);
             this.Controls.Add(this.dateTimePicker1);

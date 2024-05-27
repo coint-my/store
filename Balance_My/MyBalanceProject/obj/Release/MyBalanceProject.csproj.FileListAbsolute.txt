@@ -1,0 +1,12 @@
+D:\Мой код\Balance_My\MyBalanceProject\bin\Release\MyBalanceProject.exe
+D:\Мой код\Balance_My\MyBalanceProject\bin\Release\MyBalanceProject.pdb
+D:\Мой код\Balance_My\MyBalanceProject\bin\Release\Balance_My.exe
+D:\Мой код\Balance_My\MyBalanceProject\bin\Release\Balance_My.pdb
+D:\Мой код\Balance_My\MyBalanceProject\obj\Release\MyBalanceProject.csproj.AssemblyReference.cache
+D:\Мой код\Balance_My\MyBalanceProject\obj\Release\MyBalanceProject.FormStart.resources
+D:\Мой код\Balance_My\MyBalanceProject\obj\Release\MyBalanceProject.Properties.Resources.resources
+D:\Мой код\Balance_My\MyBalanceProject\obj\Release\MyBalanceProject.csproj.GenerateResource.cache
+D:\Мой код\Balance_My\MyBalanceProject\obj\Release\MyBalanceProject.csproj.CoreCompileInputs.cache
+D:\Мой код\Balance_My\MyBalanceProject\obj\Release\MyBalanceProject.csproj.CopyComplete
+D:\Мой код\Balance_My\MyBalanceProject\obj\Release\MyBalanceProject.exe
+D:\Мой код\Balance_My\MyBalanceProject\obj\Release\MyBalanceProject.pdb

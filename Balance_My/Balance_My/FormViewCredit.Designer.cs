@@ -49,7 +49,7 @@
             this.dataGridCredit.Location = new System.Drawing.Point(24, 23);
             this.dataGridCredit.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridCredit.Name = "dataGridCredit";
-            this.dataGridCredit.Size = new System.Drawing.Size(702, 590);
+            this.dataGridCredit.Size = new System.Drawing.Size(702, 448);
             this.dataGridCredit.TabIndex = 0;
             // 
             // Column1
@@ -77,16 +77,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 637);
+            this.ClientSize = new System.Drawing.Size(750, 495);
             this.Controls.Add(this.dataGridCredit);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormViewCredit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Таблица Расходов";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormViewCredit_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCredit)).EndInit();
             this.ResumeLayout(false);
 

@@ -21,5 +21,11 @@ namespace Balance_My
                     PresenterForm.ListCredit[i].Description);
             }
         }
+
+        private void FormViewCredit_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
+        }
     }
 }

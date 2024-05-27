@@ -51,7 +51,7 @@
             this.dataGridBalance.Location = new System.Drawing.Point(24, 23);
             this.dataGridBalance.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridBalance.Name = "dataGridBalance";
-            this.dataGridBalance.Size = new System.Drawing.Size(904, 619);
+            this.dataGridBalance.Size = new System.Drawing.Size(842, 450);
             this.dataGridBalance.TabIndex = 0;
             // 
             // Column1
@@ -86,15 +86,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 665);
+            this.ClientSize = new System.Drawing.Size(890, 496);
             this.Controls.Add(this.dataGridBalance);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Таблица Доходов";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormView_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBalance)).EndInit();
             this.ResumeLayout(false);
 

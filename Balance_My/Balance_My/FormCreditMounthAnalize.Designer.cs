@@ -53,15 +53,16 @@
             this.Column1,
             this.Column2,
             this.Column3});
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 22);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(901, 462);
+            this.dataGridView1.Size = new System.Drawing.Size(949, 471);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView1_CellMouseDoubleClick);
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // Column4
             // 
@@ -77,7 +78,8 @@
             this.Column1.HeaderText = "Дата";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 88;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column1.Width = 69;
             // 
             // Column2
             // 
@@ -93,11 +95,13 @@
             this.Column3.HeaderText = "Описание";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 137;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column3.Width = 118;
             // 
             // buttonOK
             // 
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonOK.Location = new System.Drawing.Point(776, 496);
             this.buttonOK.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.buttonOK.Name = "buttonOK";
@@ -125,6 +129,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.CancelButton = this.buttonOK;
             this.ClientSize = new System.Drawing.Size(949, 562);
             this.Controls.Add(this.textBoxInfo);
             this.Controls.Add(this.buttonOK);
@@ -135,7 +140,7 @@
             this.MinimizeBox = false;
             this.Name = "FormCreditMounthAnalize";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Анализ разходов";
+            this.Text = "Анализ расходов";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -135,6 +135,12 @@
     <Compile Include="FormViewCredit.Designer.cs">
       <DependentUpon>FormViewCredit.cs</DependentUpon>
     </Compile>
+    <Compile Include="myDialogSwitchDebitCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myDialogSwitchDebitCredit.Designer.cs">
+      <DependentUpon>myDialogSwitchDebitCredit.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresenterForm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,6 +189,9 @@
     <EmbeddedResource Include="FormViewCredit.resx">
       <DependentUpon>FormViewCredit.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myDialogSwitchDebitCredit.resx">
+      <DependentUpon>myDialogSwitchDebitCredit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

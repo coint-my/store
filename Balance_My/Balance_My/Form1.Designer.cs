@@ -95,26 +95,27 @@
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(222, 30);
+            this.сохранитьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(253, 30);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // сохранитьКакToolStripMenuItem
             // 
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(222, 30);
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(253, 30);
             this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
             this.сохранитьКакToolStripMenuItem.Click += new System.EventHandler(this.сохранитьКакToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(219, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(250, 6);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(222, 30);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(253, 30);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -164,6 +165,7 @@
             // внестиЗарплатуToolStripMenuItem
             // 
             this.внестиЗарплатуToolStripMenuItem.Name = "внестиЗарплатуToolStripMenuItem";
+            this.внестиЗарплатуToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
             this.внестиЗарплатуToolStripMenuItem.Size = new System.Drawing.Size(351, 30);
             this.внестиЗарплатуToolStripMenuItem.Text = "внести зарплату";
             this.внестиЗарплатуToolStripMenuItem.Click += new System.EventHandler(this.внестиЗарплатуToolStripMenuItem_Click);
@@ -171,6 +173,7 @@
             // расходыИзЗарплатыToolStripMenuItem
             // 
             this.расходыИзЗарплатыToolStripMenuItem.Name = "расходыИзЗарплатыToolStripMenuItem";
+            this.расходыИзЗарплатыToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
             this.расходыИзЗарплатыToolStripMenuItem.Size = new System.Drawing.Size(351, 30);
             this.расходыИзЗарплатыToolStripMenuItem.Text = "внести расходы";
             this.расходыИзЗарплатыToolStripMenuItem.Click += new System.EventHandler(this.расходыИзЗарплатыToolStripMenuItem_Click);
@@ -238,6 +241,7 @@
             // анализБюджетаToolStripMenuItem
             // 
             this.анализБюджетаToolStripMenuItem.Name = "анализБюджетаToolStripMenuItem";
+            this.анализБюджетаToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
             this.анализБюджетаToolStripMenuItem.Size = new System.Drawing.Size(315, 30);
             this.анализБюджетаToolStripMenuItem.Text = "Анализ Бюджета";
             this.анализБюджетаToolStripMenuItem.Click += new System.EventHandler(this.анализБюджетаToolStripMenuItem_Click);
@@ -245,6 +249,7 @@
             // анализаторToolStripMenuItem
             // 
             this.анализаторToolStripMenuItem.Name = "анализаторToolStripMenuItem";
+            this.анализаторToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.анализаторToolStripMenuItem.Size = new System.Drawing.Size(315, 30);
             this.анализаторToolStripMenuItem.Text = "Анализатор";
             this.анализаторToolStripMenuItem.Click += new System.EventHandler(this.анализаторToolStripMenuItem_Click);

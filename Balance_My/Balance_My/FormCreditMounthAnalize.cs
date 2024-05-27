@@ -47,6 +47,8 @@ namespace Balance_My
                     PresenterForm.BufferMounthCredit[i].Money, PresenterForm.BufferMounthCredit[i].Description);
             }
 
+            if (temp_list.Count < 1) return;
+
             int low_mount_money = max_mount_money / 2;
             Par p = new Par();
             //выбираю среднее значение цены из списка месячных расходов, и записываю в список для дальнейшей обработки
@@ -85,13 +87,13 @@ namespace Balance_My
             this.Close();
         }
 
-        private void DataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.ColumnIndex == 0)
             {
                 int summa = 0;
 
-                if((bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == false)
+                if ((bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == false)
                     dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
                 else
                     dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = false;

@@ -4,9 +4,27 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Balance_My
 {
+    public class ForAnalizator : IComparable
+    {
+        public DateTime date;
+        public int debit;
+        public int credit;
+
+        public int CompareTo(object obj)
+        {
+            ForAnalizator fa = (ForAnalizator)obj;
+            DateTime dt = fa.date;
+            if (date > dt)
+                return 1;
+            else if (date == dt)
+                return 0;
+            return -1;
+        }
+    }
     public struct ForAnalys
     {
         public DateTime date;
@@ -311,6 +329,94 @@ namespace Balance_My
             
         }
         /// <summary>
+        /// Получить доход расход и дату помесячно
+        /// </summary>
+        /// <returns>Возврат списка помесячных доходов и расходов</returns>
+        public static List<ForAnalizator> my_get_parser_month()
+        {
+            List<ForAnalizator> temp_analys = null;// Список доходов и расходов в месяц
+            if (ListBalance.Count > 0)
+            {
+                temp_analys = new List<ForAnalizator>();
+                int debit = 0;
+                listBalance.Sort(); //Сортируем все доходы по дате
+                DateTime old_dt = DateTime.Parse(ListBalance[0].DateBalance);// Старая дата
+                DateTime curr_dt = old_dt;// Текущяя дата
+                for (int ind = 0; ind < listBalance.Count; ind++)
+                {
+                    curr_dt = DateTime.Parse(ListBalance[ind].DateBalance);// Записываю текущюю дату
+                    if (old_dt.Month == curr_dt.Month && old_dt.Year == curr_dt.Year)// Проверка на месяц и год
+                        debit += listBalance[ind].Money;
+                    else //Создаём запись дохода за месяц
+                    {
+                        ForAnalizator analizator = new ForAnalizator();
+                        analizator.date = old_dt;
+                        analizator.debit = debit;
+                        temp_analys.Add(analizator);
+
+                        debit = listBalance[ind].Money;
+                        old_dt = curr_dt;
+                    }
+                }
+                ForAnalizator analizator1 = new ForAnalizator();// Последний месяц из общего списка
+                analizator1.date = curr_dt;
+                analizator1.debit = debit;
+                temp_analys.Add(analizator1);
+                //----------------------------------------------------
+                listCredit.Sort(); //Сортируем все расходы по дате
+                old_dt = DateTime.Parse(ListCredit[0].DateBalance);// Записываю предыдущую дату
+                debit = 0;// Обнуляю расходы
+                List<ForAnalizator> list_credit = new List<ForAnalizator>();
+                for (int ind = 0; ind < listCredit.Count; ind++)
+                {
+                    curr_dt = DateTime.Parse(ListCredit[ind].DateBalance);// Записываю текущюю дату
+                    if (old_dt.Month == curr_dt.Month && old_dt.Year == curr_dt.Year)// Проверка на месяц и год
+                        debit += listCredit[ind].Money;
+                    else
+                    {
+                        ForAnalizator analizator = new ForAnalizator();
+                        analizator.date = old_dt;
+                        analizator.credit = debit;
+                        list_credit.Add(analizator);
+
+                        debit = listCredit[ind].Money;
+                        old_dt = curr_dt;
+                    }
+                }
+                ForAnalizator analizator2 = new ForAnalizator();// Последний месяц из общего списка
+                analizator2.date = curr_dt;
+                analizator2.credit = debit;
+                list_credit.Add(analizator2);
+                List<ForAnalizator> temp_fa = new List<ForAnalizator>();
+                for (int cred = 0; cred < list_credit.Count; cred++)
+                {
+                    int ind = 0;
+                    for (ind = 0; ind < temp_analys.Count; ind++)
+                    {
+                        if(temp_analys[ind].date.Month == list_credit[cred].date.Month &&
+                            temp_analys[ind].date.Year == list_credit[cred].date.Year)
+                        {
+                            temp_analys[ind].credit = list_credit[cred].credit;                            
+                            break;
+                        }
+                    }
+
+                    if(ind == temp_analys.Count)
+                    {
+                        ForAnalizator fa = new ForAnalizator();
+                        fa.credit = list_credit[cred].credit;
+                        fa.date = list_credit[cred].date;
+                        temp_fa.Add(fa);
+                    }
+                }
+                temp_analys.AddRange(temp_fa);
+                list_credit.Clear();
+            }
+            temp_analys.Sort(); //Сортируем месячные списки
+
+            return temp_analys;
+        }
+        /// <summary>
         /// сумма дохода за текущий месяц
         /// </summary>
         /// <returns>строка месяц сумма</returns>
@@ -462,6 +568,128 @@ namespace Balance_My
             }
 
             return analys;
+        }
+
+        public static void my_show_DebitCreditMountAnalize(string _mounth, string _year, bool _isDebit)
+        {
+            string str_calculate = "01." + _mounth + "." + _year;
+
+            PresenterForm.BufferDateTime = DateTime.Parse(str_calculate);
+            PresenterForm.BufferMounth.Clear();
+            PresenterForm.BufferMounthCredit.Clear();
+
+            if (_isDebit)
+            {
+                for (int deb = 0; deb < PresenterForm.ListBalance.Count; deb++)
+                {
+                    BalanceBase _bb = PresenterForm.ListBalance[deb];
+                    DateTime _dt = DateTime.Parse(_bb.DateBalance);
+
+                    if ((_dt.Month == PresenterForm.BufferDateTime.Month) && (_dt.Year == PresenterForm.BufferDateTime.Year))
+                    {
+                        PresenterForm.BufferMounth.Add(_bb);
+                    }
+                }
+
+                FormDebitMounthAnaliz fdma = new FormDebitMounthAnaliz();
+                fdma.ShowDialog();
+            }
+            else
+            {
+                for (int cre = 0; cre < PresenterForm.ListCredit.Count; cre++)
+                {
+                    BalanceBase _bb = PresenterForm.ListCredit[cre];
+                    DateTime _dt = DateTime.Parse(_bb.DateBalance);
+
+                    if ((_dt.Month == PresenterForm.BufferDateTime.Month) && (_dt.Year == PresenterForm.BufferDateTime.Year))
+                    {
+                        PresenterForm.BufferMounthCredit.Add(_bb);
+                    }
+                }
+
+                FormCreditMounthAnalize fcma = new FormCreditMounthAnalize();
+                fcma.ShowDialog();
+            }
+        }
+
+        public static void my_graph_radial_show(ref Graphics _g, int _debit, int _credit, Point _pos, string _nameMounth)
+        {
+            int size = 100;
+
+            float divider = (_debit + _credit) / 360.0f;
+            float result_rad_red = (_credit / divider);
+
+            _g.FillPie(Brushes.Green, new Rectangle(_pos.X, _pos.Y, size, size), 0, 360);
+            _g.FillPie(Brushes.Red, new Rectangle(_pos.X, _pos.Y, size, size), 0,
+                result_rad_red);
+
+            float percent_green = result_rad_red / 360.0f;
+            string name_green = String.Format("{0:#.00}", percent_green).Substring(1) + "%";
+            Font font = new Font("Arial", 16, FontStyle.Bold);
+
+            float pos_centerX = _pos.X + (size / 2);
+            float pos_centerY = _pos.Y + (size / 2);
+
+            myDrawString(_nameMounth, pos_centerX, pos_centerY - (size + 15) / 2, ref _g, ref font);
+
+            float pos_green_percentX = (float)Math.Cos((result_rad_red / 2.0d) * (Math.PI / 180)) * 25 + pos_centerX;
+            float pos_green_percentY = (float)Math.Sin((result_rad_red / 2.0d) * (Math.PI / 180)) * 25 + pos_centerY;
+
+            myDrawString(name_green, pos_green_percentX, pos_green_percentY, ref _g, ref font);
+
+            float pos_red_percentX = (float)Math.Cos(((Math.Abs(result_rad_red - 360) / 2f) + result_rad_red) *
+                (Math.PI / 180)) * 25 + pos_centerX;
+            float pos_red_percentY = (float)Math.Sin(((Math.Abs(result_rad_red - 360) / 2f) + result_rad_red) *
+                (Math.PI / 180)) * 25 + pos_centerY;
+            string name_red = String.Format("{0:#.00}", Math.Abs(percent_green - 1.0f)).Substring(1) + "%";
+
+            myDrawString(name_red, pos_red_percentX, pos_red_percentY, ref _g, ref font);
+        }
+
+        public static void my_graph_radial_test(ref PictureBox _picture, int _rad)
+        {
+            Graphics myGraphic = _picture.CreateGraphics();
+            myGraphic.Clear(Color.White);
+
+            //bool is_ok = _debit - _credit > 0;
+
+            int posX = 150;
+            int posY = 100;
+            int size = 100;
+
+            //float divider = (_debit + _credit) / 360.0f;
+            float result_rad_red = _rad;
+
+            myGraphic.FillPie(Brushes.Green, new Rectangle(posX, posY, size, size), 0, 360);
+            myGraphic.FillPie(Brushes.Red, new Rectangle(posX, posY, size, size), 0,
+                result_rad_red);
+
+            float percent_green = result_rad_red / 360.0f;
+            string name_green = String.Format("{0:#.00}", percent_green).Substring(1) + "%";
+            Font font = new Font("Arial", 16, FontStyle.Bold);
+
+            float pos_centerX = posX + (size / 2);
+            float pos_centerY = posY + (size / 2);
+
+            float pos_green_percentX = (float)Math.Cos((result_rad_red / 2.0d) * (Math.PI / 180)) * 25 + pos_centerX;
+            float pos_green_percentY = (float)Math.Sin((result_rad_red / 2.0d) * (Math.PI / 180)) * 25 + pos_centerY;
+
+            myDrawString(name_green, pos_green_percentX, pos_green_percentY, ref myGraphic, ref font);
+
+            float pos_red_percentX = (float)Math.Cos(((Math.Abs(result_rad_red - 360) / 2f) + result_rad_red) * 
+                (Math.PI / 180)) * 25 + pos_centerX;
+            float pos_red_percentY = (float)Math.Sin(((Math.Abs(result_rad_red - 360) / 2f) + result_rad_red) *
+                (Math.PI / 180)) * 25 + pos_centerY;
+            string name_red = String.Format("{0:#.00}", Math.Abs(percent_green - 1.0f)).Substring(1) + "%";
+
+            myDrawString(name_red, pos_red_percentX, pos_red_percentY, ref myGraphic, ref font);
+        }
+
+        private static void myDrawString(string _name, float _x, float _y, ref Graphics _graphic, ref Font _font)
+        {
+            float font_size = _font.Size * _name.Length;
+            _graphic.DrawString(_name, _font, Brushes.Violet, new PointF(
+                _x - (font_size / 2), _y - ((float)_font.Height / 2)));
         }
     }
 }

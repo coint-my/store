@@ -21,5 +21,11 @@ namespace Balance_My
                     PresenterForm.ListBalance[i].Money, PresenterForm.ListBalance[i].Description);
             }
         }
+
+        private void FormView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
+        }
     }
 }

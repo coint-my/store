@@ -18,8 +18,12 @@ namespace Balance_My
     }
     public partial class AnalyzeBalance : Form
     {
-        List<AnalyzePair> pairs;
-        List<AnalyzePair> pairsYear;
+        private List<AnalyzePair> pairs;
+        private List<AnalyzePair> pairsYear;
+
+        private int rowIndex;
+        private bool is_down = false;
+
         public AnalyzeBalance()
         {
             InitializeComponent();
@@ -153,6 +157,60 @@ namespace Balance_My
                     }
                 }
             }
+        }
+        
+        private void dataGridView1_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            rowIndex = e.RowIndex;
+        }
+
+        private void myLookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (rowIndex >= 0)
+            {
+                myDialogSwitchDebitCredit mdsdc = new myDialogSwitchDebitCredit();
+                mdsdc.AddTittle(pairs[rowIndex].data);
+
+                if (mdsdc.ShowDialog(this) == DialogResult.OK)
+                {
+                    bool is_debit = mdsdc.myGetTypeRadioButton.Checked;
+                    string mouth = pairs[rowIndex].year.Month.ToString();
+                    string year = pairs[rowIndex].year.Year.ToString();
+
+                    PresenterForm.my_show_DebitCreditMountAnalize(mouth, year, is_debit);
+                }
+                else if (mdsdc.DialogResult == DialogResult.Cancel)
+                    mdsdc = null;
+            }
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            myLookToolStripMenuItem_Click(sender, e);
+        }
+
+        private void AnalyzeBalance_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
+        }
+
+        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && is_down)
+            {
+                myLookToolStripMenuItem_Click(sender, e);
+            }
+        }
+
+        private void dataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            rowIndex = e.RowIndex;            
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            is_down = true;
         }
     }
 }

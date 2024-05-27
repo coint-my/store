@@ -23,5 +23,11 @@ namespace Balance_My
                     PresenterForm.BufferMounth[i].Money, PresenterForm.BufferMounth[i].Description);
             }
         }
+
+        private void FormDebitMounthAnaliz_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
+        }
     }
 }

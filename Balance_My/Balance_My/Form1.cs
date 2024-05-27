@@ -35,14 +35,9 @@ namespace Balance_My
             if(PresenterForm.ListCredit.Count == 0)
                 расходЗаВсеМесяцаToolStripMenuItem.Enabled = false;
 
-            //toolStripCategory.Text = StatusCategory();
             toolStripCount.Text = PresenterForm.ListBalance.Count.ToString();
             toolStripCredit.Text = PresenterForm.ListCredit.Count.ToString();
 
-            //treeView1.Nodes.Add(Path.GetFullPath(FileAccount));
-            //LinesList(PresenterForm.ListBalance, "Доходы");
-            //LinesList(PresenterForm.ListCredit, "Расходы");
-            //treeView1.Visible = false;
             string str = "";
             System.Diagnostics.Process[] pr = System.Diagnostics.Process.GetProcesses();
             for (int i = 0; i < pr.Length; i++)
@@ -231,9 +226,15 @@ namespace Balance_My
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.Control)
+                return;
+
             menuStrip1.Focus();
             toolStripMenuItem2.Select();
             toolStripMenuItem2.ShowDropDown();
+
+            if (e.KeyCode == Keys.Escape)
+                Close();
         }
     }
 }

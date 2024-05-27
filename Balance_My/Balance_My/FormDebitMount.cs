@@ -54,44 +54,8 @@ namespace Balance_My
             string str_mounth = str.Split(' ')[0];
             string str_year = str.Split(' ')[1];
 
-            string str_calculate = "01." + str_mounth + "." + str_year;
-
-            PresenterForm.BufferDateTime = DateTime.Parse(str_calculate);
-            PresenterForm.BufferMounth.Clear();
-            PresenterForm.BufferMounthCredit.Clear();
-
-            if (isOk)
-            {
-                for (int deb = 0; deb < PresenterForm.ListBalance.Count; deb++)
-                {
-                    BalanceBase _bb = PresenterForm.ListBalance[deb];
-                    DateTime _dt = DateTime.Parse(_bb.DateBalance);
-
-                    if ((_dt.Month == PresenterForm.BufferDateTime.Month) && (_dt.Year == PresenterForm.BufferDateTime.Year))
-                    {
-                        PresenterForm.BufferMounth.Add(_bb);
-                    }
-                }
-
-                FormDebitMounthAnaliz fdma = new FormDebitMounthAnaliz();
-                fdma.ShowDialog();
-            }
-            else
-            {
-                for (int cre = 0; cre < PresenterForm.ListCredit.Count; cre++)
-                {
-                    BalanceBase _bb = PresenterForm.ListCredit[cre];
-                    DateTime _dt = DateTime.Parse(_bb.DateBalance);
-
-                    if ((_dt.Month == PresenterForm.BufferDateTime.Month) && (_dt.Year == PresenterForm.BufferDateTime.Year))
-                    {
-                        PresenterForm.BufferMounthCredit.Add(_bb);
-                    }
-                }
-
-                FormCreditMounthAnalize fcma = new FormCreditMounthAnalize();
-                fcma.ShowDialog();
-            }
+            PresenterForm.my_show_DebitCreditMountAnalize(str_mounth, str_year,
+                isOk);
         }
     }
 }

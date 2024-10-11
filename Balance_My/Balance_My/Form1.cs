@@ -35,9 +35,14 @@ namespace Balance_My
             if(PresenterForm.ListCredit.Count == 0)
                 расходЗаВсеМесяцаToolStripMenuItem.Enabled = false;
 
+            //toolStripCategory.Text = StatusCategory();
             toolStripCount.Text = PresenterForm.ListBalance.Count.ToString();
             toolStripCredit.Text = PresenterForm.ListCredit.Count.ToString();
 
+            //treeView1.Nodes.Add(Path.GetFullPath(FileAccount));
+            //LinesList(PresenterForm.ListBalance, "Доходы");
+            //LinesList(PresenterForm.ListCredit, "Расходы");
+            //treeView1.Visible = false;
             string str = "";
             System.Diagnostics.Process[] pr = System.Diagnostics.Process.GetProcesses();
             for (int i = 0; i < pr.Length; i++)
@@ -235,6 +240,28 @@ namespace Balance_My
 
             if (e.KeyCode == Keys.Escape)
                 Close();
+        }
+
+        private void openBaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog myDialog = new OpenFileDialog())
+            {
+                myDialog.InitialDirectory = Directory.GetCurrentDirectory() + "\\sourse";
+                myDialog.Filter = "file dataBase (*.dat) | *.dat";
+                myDialog.RestoreDirectory = true;
+
+                if(myDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string myFileNameAccount = myDialog.SafeFileName.Split('.')[0];
+
+                    Dispose(true);
+                    Close();
+
+                    Balance_My.Form1 formBalance = new Balance_My.Form1(DirSorce, myFileNameAccount.ToLower());
+
+                    formBalance.ShowDialog();
+                }
+            }
         }
     }
 }

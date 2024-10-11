@@ -62,6 +62,8 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripCredit = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBoxProcess = new System.Windows.Forms.TextBox();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.openBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +89,8 @@
             this.сохранитьToolStripMenuItem,
             this.сохранитьКакToolStripMenuItem,
             this.toolStripSeparator2,
+            this.openBaseToolStripMenuItem,
+            this.toolStripSeparator3,
             this.выходToolStripMenuItem});
             this.фаилToolStripMenuItem.Name = "фаилToolStripMenuItem";
             this.фаилToolStripMenuItem.Size = new System.Drawing.Size(73, 29);
@@ -96,26 +100,26 @@
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
             this.сохранитьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(253, 30);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(266, 30);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // сохранитьКакToolStripMenuItem
             // 
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(253, 30);
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(266, 30);
             this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
             this.сохранитьКакToolStripMenuItem.Click += new System.EventHandler(this.сохранитьКакToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(250, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(263, 6);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(253, 30);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(266, 30);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -213,28 +217,28 @@
             // доходЗаТекущийМесяцToolStripMenuItem
             // 
             this.доходЗаТекущийМесяцToolStripMenuItem.Name = "доходЗаТекущийМесяцToolStripMenuItem";
-            this.доходЗаТекущийМесяцToolStripMenuItem.Size = new System.Drawing.Size(315, 30);
+            this.доходЗаТекущийМесяцToolStripMenuItem.Size = new System.Drawing.Size(324, 30);
             this.доходЗаТекущийМесяцToolStripMenuItem.Text = "доход за текущий месяц";
             this.доходЗаТекущийМесяцToolStripMenuItem.Click += new System.EventHandler(this.доходЗаТекущийМесяцToolStripMenuItem_Click);
             // 
             // доходЗаВсToolStripMenuItem
             // 
             this.доходЗаВсToolStripMenuItem.Name = "доходЗаВсToolStripMenuItem";
-            this.доходЗаВсToolStripMenuItem.Size = new System.Drawing.Size(315, 30);
+            this.доходЗаВсToolStripMenuItem.Size = new System.Drawing.Size(324, 30);
             this.доходЗаВсToolStripMenuItem.Text = "доход за все месяца";
             this.доходЗаВсToolStripMenuItem.Click += new System.EventHandler(this.доходЗаВсToolStripMenuItem_Click);
             // 
             // лучшийДоходЗаМесяцToolStripMenuItem
             // 
             this.лучшийДоходЗаМесяцToolStripMenuItem.Name = "лучшийДоходЗаМесяцToolStripMenuItem";
-            this.лучшийДоходЗаМесяцToolStripMenuItem.Size = new System.Drawing.Size(315, 30);
+            this.лучшийДоходЗаМесяцToolStripMenuItem.Size = new System.Drawing.Size(324, 30);
             this.лучшийДоходЗаМесяцToolStripMenuItem.Text = "лучший доход за месяц";
             this.лучшийДоходЗаМесяцToolStripMenuItem.Click += new System.EventHandler(this.лучшийДоходЗаМесяцToolStripMenuItem_Click);
             // 
             // расходЗаВсеМесяцаToolStripMenuItem
             // 
             this.расходЗаВсеМесяцаToolStripMenuItem.Name = "расходЗаВсеМесяцаToolStripMenuItem";
-            this.расходЗаВсеМесяцаToolStripMenuItem.Size = new System.Drawing.Size(315, 30);
+            this.расходЗаВсеМесяцаToolStripMenuItem.Size = new System.Drawing.Size(324, 30);
             this.расходЗаВсеМесяцаToolStripMenuItem.Text = "расход за все месяца";
             this.расходЗаВсеМесяцаToolStripMenuItem.Click += new System.EventHandler(this.расходЗаВсеМесяцаToolStripMenuItem_Click);
             // 
@@ -242,7 +246,7 @@
             // 
             this.анализБюджетаToolStripMenuItem.Name = "анализБюджетаToolStripMenuItem";
             this.анализБюджетаToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.анализБюджетаToolStripMenuItem.Size = new System.Drawing.Size(315, 30);
+            this.анализБюджетаToolStripMenuItem.Size = new System.Drawing.Size(324, 30);
             this.анализБюджетаToolStripMenuItem.Text = "Анализ Бюджета";
             this.анализБюджетаToolStripMenuItem.Click += new System.EventHandler(this.анализБюджетаToolStripMenuItem_Click);
             // 
@@ -250,7 +254,7 @@
             // 
             this.анализаторToolStripMenuItem.Name = "анализаторToolStripMenuItem";
             this.анализаторToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.анализаторToolStripMenuItem.Size = new System.Drawing.Size(315, 30);
+            this.анализаторToolStripMenuItem.Size = new System.Drawing.Size(324, 30);
             this.анализаторToolStripMenuItem.Text = "Анализатор";
             this.анализаторToolStripMenuItem.Click += new System.EventHandler(this.анализаторToolStripMenuItem_Click);
             // 
@@ -340,6 +344,19 @@
             this.textBoxProcess.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxProcess.Visible = false;
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(263, 6);
+            // 
+            // openBaseToolStripMenuItem
+            // 
+            this.openBaseToolStripMenuItem.Name = "openBaseToolStripMenuItem";
+            this.openBaseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openBaseToolStripMenuItem.Size = new System.Drawing.Size(266, 30);
+            this.openBaseToolStripMenuItem.Text = "Open base";
+            this.openBaseToolStripMenuItem.Click += new System.EventHandler(this.openBaseToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,6 +417,8 @@
         private System.Windows.Forms.ToolStripMenuItem сохранитьКакToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem анализаторToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openBaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }
 

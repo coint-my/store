@@ -126,8 +126,6 @@ namespace MyBalanceProject
         {
             if (CheckUser(textBoxLogin.Text.ToLower()))
             {
-                //MessageBox.Show("приветствую вас ''" + textBoxLogin.Text + "''");
-
                 Balance_My.Form1 formBalance = new Balance_My.Form1(dirFileName, textBoxLogin.Text.ToLower());
 
                 formBalance.ShowDialog();

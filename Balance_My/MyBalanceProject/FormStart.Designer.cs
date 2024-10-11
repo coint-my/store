@@ -40,15 +40,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(12, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.Size = new System.Drawing.Size(145, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Введите логин";
             // 
             // buttonLogOk
             // 
             this.buttonLogOk.Enabled = false;
+            this.buttonLogOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLogOk.Location = new System.Drawing.Point(454, 70);
             this.buttonLogOk.Name = "buttonLogOk";
             this.buttonLogOk.Size = new System.Drawing.Size(88, 34);
@@ -59,9 +61,10 @@
             // 
             // textBoxLogin
             // 
+            this.textBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxLogin.Location = new System.Drawing.Point(191, 73);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(257, 20);
+            this.textBoxLogin.Size = new System.Drawing.Size(257, 29);
             this.textBoxLogin.TabIndex = 2;
             this.textBoxLogin.TextChanged += new System.EventHandler(this.textBoxLogin_TextChanged);
             this.textBoxLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxLogin_KeyDown);
@@ -69,23 +72,26 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(12, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.Size = new System.Drawing.Size(165, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Сохранить логин";
             // 
             // textBoxSaveLog
             // 
+            this.textBoxSaveLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxSaveLog.Location = new System.Drawing.Point(191, 110);
             this.textBoxSaveLog.Name = "textBoxSaveLog";
-            this.textBoxSaveLog.Size = new System.Drawing.Size(257, 20);
+            this.textBoxSaveLog.Size = new System.Drawing.Size(257, 29);
             this.textBoxSaveLog.TabIndex = 4;
             this.textBoxSaveLog.TextChanged += new System.EventHandler(this.textBoxSaveLog_TextChanged);
             // 
             // buttonSaveLog
             // 
             this.buttonSaveLog.Enabled = false;
+            this.buttonSaveLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSaveLog.Location = new System.Drawing.Point(454, 107);
             this.buttonSaveLog.Name = "buttonSaveLog";
             this.buttonSaveLog.Size = new System.Drawing.Size(88, 34);
@@ -101,6 +107,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxServerInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxServerInfo.Enabled = false;
+            this.textBoxServerInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxServerInfo.Location = new System.Drawing.Point(12, 12);
             this.textBoxServerInfo.Multiline = true;
             this.textBoxServerInfo.Name = "textBoxServerInfo";
